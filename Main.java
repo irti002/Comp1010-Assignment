@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    private static final Scanner scanner = new Scanner(System.in);  // Global scanner for input
+    private static final Scanner scanner = new Scanner(System.in);  //  for input
     private static final ArrayList<Artist> artists = new ArrayList<>();  // Store all artists
 
     public static void main(String[] args) {
@@ -17,15 +17,15 @@ public class Main {
             int choice = getUserChoice();  // Input validation for menu choice
 
             switch (choice) {
-                case 1 -> addArtist();  // New option to add an artist
-                case 2 -> addSongToLibrary(musicLibrary, playlist);
-                case 3 -> addAlbumToLibrary(musicLibrary);
-                case 4 -> playlist.playNext();
-                case 5 -> playlist.playPrevious();
-                case 6 -> playlist.shufflePlay();
-                case 7 -> musicLibrary.displayLibrary();
-                case 8 -> playlist.displaySongs();
-                case 9 -> displayArtistAlbums();
+                case 1 -> addArtist();  // option to add an artist
+                case 2 -> addSongToLibrary(musicLibrary, playlist); // add songs to playlist
+                case 3 -> addAlbumToLibrary(musicLibrary); // add album to library
+                case 4 -> playlist.playNext();  
+                case 5 -> playlist.playPrevious(); 
+                case 6 -> playlist.shufflePlay(); 
+                case 7 -> musicLibrary.displayLibrary(); 
+                case 8 -> playlist.displaySongs(); 
+                case 9 -> displayArtistAlbums();  
                 case 10 -> {
                     System.out.println("\nExiting the program... Goodbye!");
                     scanner.close();
@@ -38,7 +38,7 @@ public class Main {
 
     // Function to print the menu
     private static void printMenu() {
-        System.out.println("\n===========================");
+        System.out.println("\n============MusicLibrary===============");
         System.out.println("Choose an option:");
         System.out.println("1. Add an Artist");
         System.out.println("2. Add a Song to Library");
@@ -50,17 +50,17 @@ public class Main {
         System.out.println("8. Display Playlist");
         System.out.println("9. Display Artist's Albums");
         System.out.println("10. Exit");
-        System.out.println("===========================\n");
+        System.out.println("=============FreakyCoders==============\n");
     }
 
-    // Get valid user input for the menu choice
+    // user input validation
     private static int getUserChoice() {
         int choice = -1;
         while (true) {
             try {
                 System.out.print("Enter your choice: ");
                 choice = scanner.nextInt();
-                scanner.nextLine();  // Consume newline
+                scanner.nextLine();  
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("\nInvalid input. Please enter a number.");
@@ -70,7 +70,7 @@ public class Main {
         return choice;
     }
 
-    // New Function to add an artist
+    // function to add an artist
     private static void addArtist() {
         System.out.println("\nAdding a new artist...");
         System.out.println("Enter artist name:");
