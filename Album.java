@@ -11,26 +11,32 @@ public class Album {
         this.songs = new ArrayList<>();
     }
 
+    // Add song to album
     public void addSong(Song song) {
         songs.add(song);
         System.out.println("Song added to album: " + song.getTitle());
     }
 
-    public ArrayList<Song> getSongs() {
-        return songs;
+    // Display all songs in the album
+    public void displaySongs() {
+        System.out.println("Songs in album: " + title);
+        for (Song song : songs) {
+            System.out.println("- Song: " + song.getTitle() + " (" + song.getDuration() + " seconds, Single: " + song.isSingle() + ")");
+        }
     }
 
-    // Getter for releaseDate
+    // album title fetch
+    public String getTitle() {
+        return title;
+    }
+
+    // album release date fetch
     public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void displaySongs() {
-        System.out.println("Album: " + title + " (Released: " + releaseDate + ")");
-        for (Song song : songs) {
-            System.out.println("- " + song.getTitle());
-        }
+    // Fetch song list
+    public ArrayList<Song> getSongs() {
+        return songs;
     }
-
-   
 }
